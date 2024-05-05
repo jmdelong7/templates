@@ -2,6 +2,10 @@
 
 @import "modern-normalize";
 
+html {
+  font-size: 62.5%;
+}
+
 :root {
   line-height: 1.5;
 }
