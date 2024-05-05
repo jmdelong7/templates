@@ -1,5 +1,11 @@
 /* https://mattbrictson.com/blog/css-normalize-and-reset#my-recommendation */
 
+/* :root font added: 
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  https://css-tricks.com/snippets/css/system-font-stack/
+ */
+
+
 @import "modern-normalize";
 
 html {
@@ -8,6 +14,7 @@ html {
 
 :root {
   line-height: 1.5;
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul {
