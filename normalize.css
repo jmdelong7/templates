@@ -7,6 +7,7 @@
 
 /* Personal changes
     :root - box-sizing: border-box;
+    input - appearance: none;
 */
 
 @import "modern-normalize";
@@ -38,4 +39,8 @@ h1, h2, h3, h4, h5 {
 img {
   display: block;
   max-inline-size: 100%;
+}
+
+input {
+  appearance: none;
 }
