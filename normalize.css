@@ -8,12 +8,17 @@
 /* Personal changes
     :root - box-sizing: border-box;
     input - appearance: none;
+    body - margin: 0;
 */
 
 @import "modern-normalize";
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  margin: 0;
 }
 
 :root {
