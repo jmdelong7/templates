@@ -22,6 +22,37 @@ Add the following to scripts section then save and close:
   "build": "webpack --config webpack.prod.js",
   "deploy": "git subtree push --prefix dist origin gh-pages"
 
+# .gitignore
+
+#Node modules
+node_modules/
+
+#Build output directory
+dist/
+build/
+
+#Development server
+.webpack/
+
+#Environment variables
+.env
+.env.local
+.env.*
+
+#Cache directories
+.cache/
+.npm/
+
+#IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+#OS generated files
+.DS_Store
+Thumbs.db
+
 # webpack.common.js
 
 const path = require('path');
