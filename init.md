@@ -5,7 +5,9 @@ Make new repo in github, copy [SSH link], be in repos folder in terminal
 git clone [SSH link] && cd [repo name]
 
 mkdir src && cd src && touch index.html index.js styles.css && cd ..
-touch webpack.common.js webpack.dev.js webpack.prod.js .gitignore
+mkdir webpack && cd webpack
+touch webpack.common.js webpack.dev.js webpack.prod.js && cd
+touch .gitignore .env
 
 npm init -y
 npm install --save-dev webpack webpack-cli webpack-dev-server
@@ -13,6 +15,8 @@ npm install --save-dev webpack-merge
 npm install --save-dev html-webpack-plugin
 npm install --save-dev html-loader
 npm install --save-dev style-loader css-loader
+
+npm i dotenv
 
 Add the following to scripts section then save and close:
 "dev": "webpack serve --open --config webpack.dev.js",
