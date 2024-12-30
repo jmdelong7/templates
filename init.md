@@ -11,6 +11,7 @@ npm init -y
 npm install --save-dev webpack webpack-cli webpack-dev-server
 npm install --save-dev webpack-merge
 npm install --save-dev html-webpack-plugin
+npm install --save-dev html-loader
 npm install --save-dev style-loader css-loader
 
 Add the following to scripts section then save and close:
@@ -55,34 +56,38 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-entry: {
-app: './src/index.js',
-},
-plugins: [
-new HtmlWebpackPlugin({
-template: './src/index.html',
-}),
-],
-output: {
-filename: '[name].bundle.js',
-path: path.resolve(\_\_dirname, 'dist'),
-clean: true,
-},
-module: {
-rules: [
-{
-test: /\.css$/i,
+  entry: {
+    app: './src/index.js',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-type: 'asset/resource',
-generator: {
-filename: 'fonts/[name][ext]'
-}
-}
-],
-},
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]'
+        }
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      }      
+    ],
+  },
 };
 
 # webpack.dev.js
@@ -91,14 +96,14 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
-mode: 'development',
-devtool: 'inline-source-map',
-devServer: {
-static: './dist',
-watchFiles: ['src/**/*'],
-open: true,
-hot: true,
-},
+  mode: 'development',
+  devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+    watchFiles: ['src/**/*'],
+    open: true,
+    hot: true,
+  },
 });
 
 # webpack.prod.js
@@ -107,8 +112,8 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
-mode: 'production',
-output: {
-publicPath: '/form-validation/', // Add this line - must match your repo name
-}
+  mode: 'production',
+  output: {
+    publicPath: '/coordinator-tools/',  // Add this line - must match your repo name
+  }
 });
