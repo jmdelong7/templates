@@ -15,6 +15,7 @@ npm install --save-dev webpack-merge
 npm install --save-dev html-webpack-plugin
 npm install --save-dev html-loader
 npm install --save-dev style-loader css-loader
+npm install --save-dev babel-jest @babel/core @babel/preset-env
 
 Used for saving keys in a .env file. Can be accessed with process.env.KEY
 npm install --save-dev dotenv-webpack
