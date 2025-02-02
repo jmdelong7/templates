@@ -6,7 +6,7 @@ git clone [SSH link] && cd [repo name].
 
 mkdir src && cd src && touch index.html index.js styles.css && cd ..
 mkdir webpack && cd webpack
-touch webpack.common.js webpack.dev.js webpack.prod.js && cd
+touch webpack.common.js webpack.dev.js webpack.prod.js && cd ..
 touch .gitignore .env
 
 npm init -y
@@ -22,6 +22,3 @@ npm install --save-dev dotenv-webpack
 
 Used for deploying to github pages with easy deploy command.
 npm install --save-dev gh-pages
-
-
-
